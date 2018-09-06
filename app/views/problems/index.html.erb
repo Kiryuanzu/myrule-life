@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <h1><%= current_user.username %>がログイン中</h1>
+<% else %>
+  <p>未ログイン</p>
+<% end %>
+
