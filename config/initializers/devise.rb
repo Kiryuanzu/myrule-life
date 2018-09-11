@@ -255,8 +255,14 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   twitter_consumer_key = ENV['MYRULE_TWITTER_CONSUMER_KEY']
   twitter_consumer_secret = ENV['MYRULE_TWITTER_CONSUMER_SECRET']
-  config.omniauth :twitter, twitter_consumer_key, twitter_consumer_secret
-  # ==> Warden configuration
+
+  case Rails.env
+    when "development"
+      config.omniauth :twitter, twitter_consumer_key, twitter_consumer_secret, callback_url: "http://localhost:3000/users/auth/twitter/callback"
+    when "production"
+      config.omniauth :twitter, twitter_consumer_key, twitter_consumer_secret, callback_url: "https://myrulelife.herokuapp.com/users/auth/twitter/callback"
+  end  
+      # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
