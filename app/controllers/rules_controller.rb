@@ -16,5 +16,7 @@ class RulesController < ApplicationController
   end
 
   private
-  
+    def rule_params
+    params.require(:rule).permit(:title).merge(user_id: current_user.id)
+  end
 end
