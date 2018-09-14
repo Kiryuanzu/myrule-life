@@ -5,7 +5,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
 
-  def callback_from(privider)
+  def callback_from(provider)
     provider = provider.to_s
 
     @uer = User.find_for_oauth(request.env['omniauth.auth'])
