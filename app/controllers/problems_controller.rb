@@ -15,6 +15,12 @@ class ProblemsController < ApplicationController
   def about
   end
 
+  def destroy
+  end
+
+  def edit
+  end
+
   private
 
   def problem_params
