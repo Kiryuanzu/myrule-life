@@ -10,12 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180918143833) do
+ActiveRecord::Schema.define(version: 20180919142236) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "problems", force: :cascade do |t|
+  create_table "problems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.boolean "private"
     t.datetime "created_at", null: false
@@ -24,7 +21,7 @@ ActiveRecord::Schema.define(version: 20180918143833) do
     t.index ["user_id"], name: "index_problems_on_user_id"
   end
 
-  create_table "rules", force: :cascade do |t|
+  create_table "rules", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.integer "user_id"
     t.integer "problem_id"
@@ -32,6 +29,14 @@ ActiveRecord::Schema.define(version: 20180918143833) do
     t.datetime "updated_at", null: false
     t.index ["problem_id"], name: "index_rules_on_problem_id"
     t.index ["user_id"], name: "index_rules_on_user_id"
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "provider"
+    t.string "uid"
+    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
