@@ -12,7 +12,7 @@
     <header>
       <nav>
         <% if logged_in? %>
-          <%= link_to 'ログアウト', "/logout", method: :delete %>
+          <%= link_to 'ログアウト', "/logout"%>
         <% else %>
           <%= link_to 'ログイン', "/auth/twitter" %>
         <% end %>
