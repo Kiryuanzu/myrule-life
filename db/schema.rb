@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190124134741) do
+ActiveRecord::Schema.define(version: 20190131142113) do
+
+  create_table "like_rules", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.integer "rule_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rule_id"], name: "index_like_rules_on_rule_id"
+    t.index ["user_id", "rule_id"], name: "index_like_rules_on_user_id_and_rule_id", unique: true
+    t.index ["user_id"], name: "index_like_rules_on_user_id"
+  end
 
   create_table "problems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
