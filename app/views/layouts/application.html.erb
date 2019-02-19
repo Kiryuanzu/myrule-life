@@ -9,18 +9,26 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <% if logged_in? %>
-          <%= link_to 'ログアウト', "/logout"%>
-        <% else %>
-          <%= link_to 'ログイン', "/auth/twitter" %>
-        <% end %>
-      </nav>
+    <header class="header-nav">
+        <span class="site-title"><%= link_to "みんなのマイルール帳", root_url %></span>
+        <nav class="nav-header">
+          <ul class="nav-list-ul">
+            <% if logged_in? %>
+              <li class="nav-list-li"><%= link_to 'ログアウト', "/logout", class: ""%></li>
+            <% else %>
+              <li class="nav-list-li"><%= link_to 'ログイン', "/auth/twitter" %>
+            <% end %>
+          </ul>
+        </nav>
     </header>
+      <div id="wrapper">
+        <div class="main">
+          <%= yield %>
+        </div>
+      </div>
 
-     <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
-    <%= yield %>
+      <footer>
+        <%= render 'layouts/footer' %>
+      </footer>
   </body>
 </html>

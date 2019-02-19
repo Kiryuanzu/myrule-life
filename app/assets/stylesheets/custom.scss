@@ -1,0 +1,97 @@
+@import url(https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css);
+@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+
+header {
+  position: fixed;
+  background-color: #504946;
+  height: 60px;
+  margin: -8px 0px 0px 0px;
+}
+
+.site-title {
+  padding-left: 20px;
+  font-family: 'Rounded Mplus 1c';  
+  font-size: 1em;
+}
+
+.site-title a {
+  text-decoration: none;
+  color: white;
+}
+
+.site-title a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.main {
+  padding-top: 60px;
+  width: 60%;
+  margin: 0 auto;
+  @media screen and (max-width: 640px) {
+  width: 90%;
+  }  
+}
+ 
+#wrapper { 
+  min-height: 100%;
+  background-color: white;
+}
+
+#footer {
+  height: 10px;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.copyright{
+  padding-bottom: 1%;
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-header {
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+.nav-list-ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  padding-right: 30px;
+}
+ @media screen and (max-width: 640px){
+  .nav-list-ul {
+    display: none;
+  }
+  }
+
+.nav-list-li {
+  margin-left: 16px;
+  list-style: none;
+  font-family: 'Rounded Mplus 1c';
+}
+.nav-list-li a {
+  text-decoration: none;
+  color: white;
+}

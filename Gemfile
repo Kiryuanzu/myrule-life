@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
+gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -34,6 +34,12 @@ gem 'omniauth-twitter'
 # Use Capistrano for deployment
 gem 'carrierwave'
 gem 'rmagick'
+
+gem 'font-awesome-rails', '~> 4.7.0.4'
+gem 'kaminari'
+gem 'bootsnap', require: false
+gem 'aws-sdk-s3'
+gem 'mini_magick', '~> 4.8'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
